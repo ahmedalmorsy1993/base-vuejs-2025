@@ -11,7 +11,7 @@ import NavItems from './NavItems'
 export function AppSidebar() {
   const { side } = useLocale()
   return (
-    <Sidebar side={side}>
+    <Sidebar side={side.value}>
       <SidebarHeader>
         <h1>logo</h1>
       </SidebarHeader>
