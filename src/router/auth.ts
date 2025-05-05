@@ -1,5 +1,4 @@
 import { useAuthStore } from '@/stores/auth'
-import { defineAsyncComponent } from 'vue'
 import { type RouteRecordRaw } from 'vue-router'
 
 export const authRoutes: RouteRecordRaw[] = [
@@ -14,12 +13,12 @@ export const authRoutes: RouteRecordRaw[] = [
         next('/')
       }
     },
-    component: defineAsyncComponent(() => import('@/layouts/auth/index.vue')),
+    component: () => import('@/layouts/auth/index.vue'),
     children: [
       {
         path: 'login',
         name: 'login',
-        component: defineAsyncComponent(() => import('@/views/auth/Login.vue')),
+        component: () => import('@/views/auth/Login.vue'),
       },
     ]
   },
